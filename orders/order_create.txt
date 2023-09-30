@@ -1,0 +1,22 @@
+
+<?php
+include("dbConnection.php");
+// get the form data
+
+$customerid=$_POST['customerid']; 
+$productid=$_POST['productid']; 
+$amount = $_POST['amount'];
+$quantity= $_POST['quantity'];
+$c_address = $_POST['c_address'];
+$payment=$_POST['payment'];
+
+
+// insert data into table
+$sql = "INSERT INTO orders (customerid,productid,amount,quantity,c_address,payment) VALUES ( '$customerid' ,'$productid','$amount','$quantity','$c_address','$payment')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Data inserted successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+?>

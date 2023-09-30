@@ -1,0 +1,47 @@
+<!-- <?php
+/*include("dbConnection.php");
+// get the form data
+
+$product_name = $_POST['product_name'];
+$product_prize = $_POST['product_prize'];
+$quantity= $_POST['quantity'];
+
+
+
+// insert data into table
+$sql = "INSERT INTO product (product_name,product_prize,quantity) VALUES ('$product_name','$product_prize','$quantity')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Data inserted successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
+
+?> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+        <td><?php echo $row["productid"]; ?></td>
+        <td><?php echo $row["product_name"]; ?></td>
+        <td><?php echo $row["product_prize"]; ?></td> 
+        <td><?php echo $row["quantity"]; ?></td> 
+       <td> <?php echo'<img src="data:image/jpeg;base64,'.base64_encode($row['file'] ).'" alt="" class="img-a "  width="150" height="200">'?></td>
+       
+       
+        <td><a href="product_update.php?id=<?php echo $row["productid"]; ?>">Update</a></td> 
+        <td><a href="product_delete.php?id=<?php echo $row["productid"]; ?>">Delete</a></td> 
+        <td><a href="../orders/orders_detail_create.php?id=<?php echo $row["productid"]; ?>">Order</a></td>
+        <td><a href="../feedback/feedback_detail_create.php?id=<?php echo $row["productid"]; ?>">feedback</a></td>  
+        </tr>
