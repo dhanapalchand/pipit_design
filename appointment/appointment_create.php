@@ -3,7 +3,6 @@ include("../config/dbConnection.php");
 // get the form data
 session_start();
 
-
 $customer_name = $_POST['customer_name'];
 $appoint_date = $_POST['appoint_date'];
 
